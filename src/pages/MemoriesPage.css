@@ -1,0 +1,203 @@
+.floating-heart {
+  position: absolute;
+  top: 100%;
+  animation: fly 10s infinite ease-in-out;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+.memories-container {
+  padding: 30px 20px;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ffe0f0, #eb3fc565);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.memories-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  text-align: center;
+  color: #d63384;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 8px rgba(255, 105, 180, 0.4);
+  border: 2px solid #d63384;
+  border-radius: 12px;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: #fff0f6;
+}
+
+
+/* Unlock frame */
+.unlock-frame {
+  position: relative; /* Needed for ::after, but doesn't shift if layout is intact */
+  background: white;
+  padding: 80px 40px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+  font-size: 1.4rem;
+  color: #d63384;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin: 80px auto; /* Centers it horizontally */
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unlock-frame:hover {
+  transform: scale(1.05);
+}
+
+.unlock-frame::before {
+  content: "💖";
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  animation: float 3s infinite ease-in-out;
+  font-size: 28px;
+  opacity: 0.4;
+}
+.unlock-frame::after {
+  content: "✨";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  animation: float 2s infinite ease-in-out;
+  font-size: 30px;
+  opacity: 0.5;
+}
+
+
+/* Gallery Scroll */
+.memory-gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+  justify-content: flex-start;
+  margin-top: 20px;
+  scroll-behavior: smooth;
+}
+
+/* Image Cards */
+.memory-thumb {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.memory-thumb.active {
+  transform: scale(1.05);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.memory-thumb img {
+  width: 180px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Caption + Button */
+.memory-caption {
+  margin-top: 30px;
+  min-height: 100px;
+}
+
+.typing-caption {
+  min-height: 50px;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 15px;
+  white-space: pre-wrap;
+}
+
+.typing-caption::after {
+  content: '|';
+  animation: blink 1s infinite;
+  margin-left: 5px;
+  color: #333;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+.memory-caption button {
+  background: linear-gradient(to right, #ff6bcb, #ffb6b9);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+  font-size: 1rem;
+}
+
+.memory-caption button:hover {
+  transform: scale(1.05);
+}
+
+.celebrate-btn {
+  margin-top: 15px;
+  background: linear-gradient(to right, #ff85c1, #ffb347);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.celebrate-btn:hover {
+  transform: scale(1.05);
+}
+
+
+/* Responsive */
+@media (max-width: 500px) {
+  .memory-thumb img {
+    width: 130px;
+    height: 180px;
+  }
+
+  .typing-caption {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .memories-title {
+    font-size: 2.2rem;
+  }
+}
+

@@ -1,0 +1,99 @@
+.landing-wrapper {
+  height: 100vh;
+  background: linear-gradient(135deg, #ffdce0, #ec3572);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  /* background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); */
+
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0px 8px 30px rgba(255, 105, 180, 0.3);
+  max-width: 600px;
+  width: 90%;
+}
+
+.title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #d63384;
+}
+
+.subtitle,
+.quote {
+  font-family: 'Poppins', sans-serif;
+}
+.quote {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: linear-gradient(to right, #ff6bcb, #ffb6b9);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* 📱 For tablets and small screens */
+@media (max-width: 768px) {
+  .card {
+    padding: 30px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .quote {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px 24px;
+  }
+}
+
+/* 📱 For phones and very small screens */
+@media (max-width: 480px) {
+  .card {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .quote {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 8px 20px;
+  }
+}
