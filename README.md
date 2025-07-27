@@ -33,7 +33,7 @@ Welcome to the **"Birthday Surprise"** project — a heartwarming, interactive w
 ### 1️⃣ Clone the repo
 
 ```bash
-git clone https://github.com/your-username/birthday-surprise.git
+git clone https://github.com/Anupam2090/birthday-surprise.git
 cd birthday-surprise
 
 ```
